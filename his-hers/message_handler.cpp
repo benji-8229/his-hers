@@ -53,8 +53,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
     payloadChars[i] = (char)payload[i];
   }
   payloadChars[length] = '\0';
-  
-  if (strcmp(payloadChars, mqtt_user) != 0) { //if the payload is not the same as mqtt_user
+
+  //all payloads sent are just mqtt_user, so if the payload is different than our mqtt_user it came from a different board
+  if (strcmp(payloadChars, mqtt_user) != 0) {
     received = true;
   }
 }
