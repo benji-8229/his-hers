@@ -28,12 +28,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
   payloadChars[length] = '\0';
   
-  if (strcmp(payloadChars, mqtt_user) != 0) { //all payloads sent are just mqtt_user, so if the payload is different than our mqtt_user it came from a different board
+  //all payloads sent are just mqtt_user, so if the payload is different than our mqtt_user it came from a different board
+  if (strcmp(payloadChars, mqtt_user) != 0) {
     received = true;
   }
 }
 ```
-If the message was from another board, we set `received = true` which turns on our lights. We assign our button a callback function which checks if `received == true`. If it is, set it to false and turn off the lights. If `received == false`, we send our mqtt_user to the topic.
+If the message was from another board, we set `received = true` which turns on our lights. We assign our button a callback function which checks if `received == true`. If it is, it's set to false and lights are turned off. If `received == false` we send our mqtt_user to the topic.
 
 I would like to thank **MrDIYLab** on Instructable for his [code and instructions](https://www.instructables.com/How-to-Add-a-Setup-Portal-to-ESP8266-Projects/) posted to Instructables for the setup portal. HTML/CSS are not my strong suit and this helped me get started much quicker.
 
