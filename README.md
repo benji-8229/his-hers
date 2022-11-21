@@ -1,6 +1,7 @@
 # his-hers
 
 ![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)  [![benji8229](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white) ](https://benji8229.medium.com/)
+
 `his-hers` is a pair of identical IoT devices created for people in medium to long distance relationships feel more connected. 
 
 ## How it Works
