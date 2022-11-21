@@ -18,7 +18,24 @@ This project was initially imagined and prototyped in late 2021, but school and 
 
 The project is running off an `ESP8266 NodeMCU`, and the boards communicate through the `MQTT messaging protocol`. The amount of data transmitted is tiny, small enough we can actually just use free MQTT brokers intended for testing. The only dependency is our Arduino MQTT client, [pubsubclient](https://github.com/knolleary/pubsubclient) by Nick O'Leary.
 
-I would like to thank **MrDIYLab** on Instructable for his [code and instructions](https://www.instructables.com/How-to-Add-a-Setup-Portal-to-ESP8266-Projects/) posted to Instructables. HTML/CSS are not my strong suit and this helped me get started much quicker.
+The code behind this is very simple. We start by checking if we can connect to WiFi. If we can't, we open an AP and serve the setup portal to anyone connected. Once we are connected to WiFi we connect to our MQTT broker and subscribe to a topic. When we receive a message in this topic it goes to our callback function, which decodes the payload and checks if it was sent from this device or another.
+```cpp
+void callback(char* topic, byte* payload, unsigned int length) {
+  char payloadChars[length+1];
+  
+  for (int i = 0; i < length; i++) {
+    payloadChars[i] = (char)payload[i];
+  }
+  payloadChars[length] = '\0';
+  
+  if (strcmp(payloadChars, mqtt_user) != 0) { //all payloads sent are just mqtt_user, so if the payload is different than our mqtt_user it came from a different board
+    received = true;
+  }
+}
+```
+If the message was from another board, we set `received = true` which turns on our lights. We assign our button a callback function which checks if `received == true`. If it is, set it to false and turn off the lights. If `received == false`, we send our mqtt_user to the topic.
+
+I would like to thank **MrDIYLab** on Instructable for his [code and instructions](https://www.instructables.com/How-to-Add-a-Setup-Portal-to-ESP8266-Projects/) posted to Instructables for the setup portal. HTML/CSS are not my strong suit and this helped me get started much quicker.
 
 ## Recreation
 #### Material List
