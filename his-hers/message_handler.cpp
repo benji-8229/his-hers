@@ -13,7 +13,6 @@ void mqtt_connect() {
     digitalWrite(2, LOW);
 
     if (!client.connect(mqtt_user)) {
-      Serial.println(client.state());
       delay(5000);
     } 
     else {
@@ -21,7 +20,6 @@ void mqtt_connect() {
       digitalWrite(2, HIGH);
     }
   }
-  Serial.println(client.state());
   client.subscribe("hishers/signals", 1);
 }
 
@@ -40,6 +38,10 @@ bool mqtt_send() {
   return client.publish("hishers/signals", mqtt_user, 2);
 }
 
+void mqtt_set_received(bool tf) {
+  received = tf;
+}
+
 bool mqtt_received() { 
   return received;
 }
@@ -55,7 +57,4 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if (strcmp(payloadChars, mqtt_user) != 0) { //if the payload is not the same as mqtt_user
     received = true;
   }
-
-  Serial.print("Received payload: ");
-  Serial.println(payloadChars);
 }

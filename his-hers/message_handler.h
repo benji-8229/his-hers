@@ -9,5 +9,6 @@ void mqtt_connect();
 void mqtt_loop();
 bool mqtt_send();
 bool mqtt_received();
+void mqtt_set_received(bool tf);
 
 #endif
