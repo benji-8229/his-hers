@@ -14,7 +14,7 @@ Each device has a button and a light. Push the button on your board and it will 
 
 ## Development
 
-This project was initially imagined and prototyped in late 2021, but school and life got in the way until now. I decided to restart and finish it now, in time to give it as a Christmas gift.
+This project was initially imagined and prototyped in late 2021, but school and life got in the way until now. I decided to restart and finish it now, right on time to give it as a Christmas gift.
 
 The project is running off an `ESP8266 NodeMCU`, and the boards communicate through the `MQTT messaging protocol`. The amount of data transmitted is tiny, small enough we can actually just use free MQTT brokers intended for testing. The only dependency is our Arduino MQTT client, [pubsubclient](https://github.com/knolleary/pubsubclient) by Nick O'Leary.
 
@@ -28,7 +28,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
   payloadChars[length] = '\0';
   
-  //all payloads sent are just mqtt_user, so if the payload is different than our mqtt_user it came from a different board
+  // all payloads sent are just the variable mqtt_user, so if the payload 
+  // is different than our mqtt_user it came from a different board
   if (strcmp(payloadChars, mqtt_user) != 0) {
     received = true;
   }
