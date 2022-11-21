@@ -36,7 +36,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 ```
 If the message was from another board, we set `received = true` which turns on our lights. We assign our button a callback function which checks if `received == true`. If it is, it's set to false and lights are turned off. If `received == false` we send our mqtt_user to the topic.
 
-Originally I was planning to host my own MQTT broker off a Raspberry PI, but I realized this was way overkill for the amount of data being sent. I tried HiveMQ because I still wanted a private broker, but didn't care to deal with the certificates and TLS. Also tried Mosquitto, but the traffic was too high and it felt very slow. Settled on EMQX because it's free, lower traffic than Mosquitto, and I don't have to mess with certificates.
+Originally I was planning to host my own MQTT broker off a Raspberry PI, but I realized this was way overkill for the amount of data being sent and the fact that there are just online brokers. I tried HiveMQ because I still wanted a private broker, but didn't care to deal with the certificates and TLS. Also tried Mosquitto, but the traffic was too high and it felt very slow. Settled on EMQX because it's free, lower traffic than Mosquitto, and I don't have to mess with certificates.
 
 I would like to thank **MrDIYLab** on Instructable for his [code and instructions](https://www.instructables.com/How-to-Add-a-Setup-Portal-to-ESP8266-Projects/) for the setup portal. HTML/CSS are not my strong suit and this helped me get started much quicker.
 
