@@ -39,7 +39,7 @@ If the message was from another board, we set `received = true` which turns on o
 I would like to thank **MrDIYLab** on Instructable for his [code and instructions](https://www.instructables.com/How-to-Add-a-Setup-Portal-to-ESP8266-Projects/) posted to Instructables for the setup portal. HTML/CSS are not my strong suit and this helped me get started much quicker.
 
 ## Recreation
-#### Material List
+### Material List
 - [Esp8266 NodeMCU](https://www.amazon.com/HiLetgo-Internet-Development-Wireless-Micropython/dp/B010N1SPRK/ref=pd_lpo_2?pd_rd_w=EwZEn&content-id=amzn1.sym.116f529c-aa4d-4763-b2b6-4d614ec7dc00&pf_rd_p=116f529c-aa4d-4763-b2b6-4d614ec7dc00&pf_rd_r=V5P6J3QDV0DJFCGAX75B&pd_rd_wg=7QXj5&pd_rd_r=d4de3347-4a13-44e2-a039-7528adc9aea8&pd_rd_i=B010N1SPRK&psc=1)
 - [Diffused Rectangle 5mm RGB Led](https://www.adafruit.com/product/2739)
 - [Protoboard](https://www.amazon.com/EPLZON-Solder-able-Breadboard-Electronics-Compatible/dp/B09WZXHMDG/ref=asc_df_B09WZXHMDG/?tag=hyprod-20&linkCode=df0&hvadid=598524192612&hvpos=&hvnetw=g&hvrand=20696255451240229&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1021721&hvtargid=pla-1677878354633&psc=1)
