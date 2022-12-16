@@ -5,7 +5,7 @@
 
 `his-hers` is a pair of identical IoT devices designed for people in medium / long distance relationships to feel more connected. 
 
-![his-hers blinking](https://i.imgur.com/e4FbVy6.gif)
+![his-hers blinking](https://github.com/benji-8229/his-hers/blob/main/images/finished.gif?raw=true)
 
 ## How it Works
 
@@ -13,7 +13,7 @@ When you plug one in for the first time, wait and a blue LED should light showin
 
 Each device has a button and a light. Push the button on your board and it will make the light on your partners board flash. They can turn off their light by pressing the button once, and send light to yours by pressing again.
 
-![his-hers demo](https://i.imgur.com/aR1z2sq.gif)
+![his-hers demo](https://github.com/benji-8229/his-hers/blob/main/images/demo.gif?raw=true)
 
 ## Development
 
@@ -46,7 +46,7 @@ I would like to thank **MrDIYLab** on Instructable for his [code and instruction
 
 After the tech was done I had to decide how to make it a bit nicer, as it was looking a little too homemade. It was also light enough to slide around a desk just from the weight of a cable. I decided on a wooden base to give it weight and a slightly more complete look. After that, drilling a few holes, and assembling, we are done!
 
-![his-hers being woodworked](https://i.imgur.com/rIVw0BL.png)
+![his-hers being woodworked](https://github.com/benji-8229/his-hers/blob/main/images/drying.png?raw=true)
 
 ## Recreation
 ### Material List
