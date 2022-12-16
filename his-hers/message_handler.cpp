@@ -1,8 +1,8 @@
 #include "message_handler.h"
 
 bool received = false;
-const char* mqtt_server = "broker.emqx.io";
-const char* mqtt_user = "hisClient"; //we dont actually need a username because we use an unauthenticated and public broker, we can just use it as a clientID
+const char* mqtt_server = "broker_address";
+const char* mqtt_user = "client_name"; //we dont actually need a username because we use an unauthenticated and public broker, we can just use it as a clientID
 WiFiClient wifiClient;
 PubSubClient client(mqtt_server, (int)1883, callback, wifiClient);
 
@@ -35,6 +35,7 @@ bool mqtt_send() {
     mqtt_connect();
   }
   received = false;
+  Serial.println("sent");
   return client.publish("hishers/signals", mqtt_user, 2);
 }
 
@@ -54,6 +55,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
   payloadChars[length] = '\0';
 
+  Serial.println("received");
   //all payloads sent are just mqtt_user, so if the payload is different than our mqtt_user it came from a different board
   if (strcmp(payloadChars, mqtt_user) != 0) {
     received = true;
