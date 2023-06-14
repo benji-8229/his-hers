@@ -13,7 +13,7 @@ When you plug one in for the first time, wait and a blue LED should light showin
 
 Each device has a button and a light. Push the button on your board and it will make the light on your partners board flash. They can turn off their light by pressing the button once, and send light to yours by pressing again.
 
-![his-hers demo](https://github.com/benji-8229/his-hers/blob/main/images/demo.gif?raw=true)
+![his-hers demo](https://github.com/benji-8229/his-hers/blob/main/images/demo-min.gif?raw=true)
 
 ## Development
 
